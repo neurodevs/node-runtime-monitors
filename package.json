@@ -45,6 +45,8 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@neurodevs/generate-id": "^1.1.2",
+    "@neurodevs/node-tdd": "^0.2.5",
     "@sprucelabs/resolve-path-aliases": "^4.0.13",
     "@types/node": "^25.0.6",
     "chokidar-cli": "^3.0.0",
