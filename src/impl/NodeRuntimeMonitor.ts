@@ -38,17 +38,18 @@ export default class NodeRuntimeMonitor implements RuntimeMonitor {
     }
 
     private createHttpServer() {
-        this.http.createServer(this.listener)
+        this.http.createServer(this.handleRequest)
     }
 
-    private get listener() {
-        return async (_req: IncomingMessage, res: ServerResponse) => {
-            const response = await this.getResponseFromClient()
+    protected handleRequest = async (
+        _req: IncomingMessage,
+        res: ServerResponse
+    ) => {
+        const response = await this.getResponseFromClient()
 
-            if (response) {
-                res.writeHead(200, response.headers)
-                res.end(response.file)
-            }
+        if (response) {
+            res.writeHead(200, response.headers)
+            res.end(response.file)
         }
     }
 

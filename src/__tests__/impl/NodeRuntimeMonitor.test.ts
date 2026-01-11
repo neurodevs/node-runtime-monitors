@@ -128,7 +128,7 @@ export default class NodeRuntimeMonitorTest extends AbstractPackageTest {
 
         const callsToEnd: string[] = []
 
-        await this.instance['listener'](
+        await this.instance['handleRequest'](
             {} as http.IncomingMessage,
             {
                 writeHead: (
