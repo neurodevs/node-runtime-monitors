@@ -38,7 +38,7 @@ export default class NodeRuntimeMonitor implements RuntimeMonitor {
     }
 
     private createHttpServer() {
-        this.http.createServer(this.handleRequest)
+        this.http.createServer(this.handleRequest).listen(3242)
     }
 
     protected handleRequest = async (

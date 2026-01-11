@@ -3,6 +3,7 @@ import http from 'node:http'
 import {
     callsToHttpCreateServer,
     fakeHttp,
+    FakeHttpServer,
     resetFakeHttp,
 } from '@neurodevs/fake-node-core'
 import { test, assert } from '@neurodevs/node-tdd'
@@ -17,6 +18,8 @@ import AbstractPackageTest from '../AbstractPackageTest.js'
 
 export default class NodeRuntimeMonitorTest extends AbstractPackageTest {
     private static instance: SpyNodeRuntimeMonitor
+
+    private static readonly httpServerPort = 3242
 
     private static readonly fakeHeaders = {
         [this.generateId()]: this.generateId(),
@@ -113,6 +116,17 @@ export default class NodeRuntimeMonitorTest extends AbstractPackageTest {
             callsToEnd[0],
             this.fakeFile,
             'end(...) was not called with expected arguments!'
+        )
+    }
+
+    @test()
+    protected static async startCallsListenOnHttpServer() {
+        this.start()
+
+        assert.isEqualDeep(
+            FakeHttpServer.callsToListen[0],
+            this.httpServerPort,
+            'listen(...) was not called on created server!'
         )
     }
 
