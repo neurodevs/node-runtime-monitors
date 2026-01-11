@@ -755,6 +755,25 @@
   resolved "https://registry.yarnpkg.com/@pkgr/core/-/core-0.2.9.tgz#d229a7b7f9dac167a156992ef23c7f023653f53b"
   integrity sha512-QNqXyfVS2wm9hweSYD2O7F0G06uurj9kZ96TRQE5Y9hU7+tgdZwIkbAKc5Ocy1HxEY2kuDQa6cQ1WRs/O5LFKA==
 
+"@quickstat/core@0.0.4", "@quickstat/core@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@quickstat/core/-/core-0.0.4.tgz#a356d205abaa2847305d35269f00a1e0c65117bf"
+  integrity sha512-irybCMqcy/9GJn9xKAVbPt97bIlbW4XKI1sX50E4jXtS171xhzi5ruTo2QAlMwD5LsPJfe7Owa0iOjKKu06lkw==
+
+"@quickstat/nodejs@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@quickstat/nodejs/-/nodejs-0.0.4.tgz#c945855130212528419c71445315f1490acbef28"
+  integrity sha512-I92h648sPCMzzFEnOAa9p5O+RNxOgVHYy+z2WzV3L72OhAW9d/ute7K58CkpDa2rKN5Wpk/Fg4mGyDf4klpFRQ==
+  dependencies:
+    "@quickstat/core" "0.0.4"
+
+"@quickstat/prometheus@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@quickstat/prometheus/-/prometheus-0.0.4.tgz#c9b15064ad3e8f871d03717752ff206d4e3b72cd"
+  integrity sha512-KSVUrLzUXcZmcN4u/c6f8cWD310o342p+tF2DYEDaxDB4FH4wK9FAkQwRwzlcDGSWvEF+naLe1TmrGuAqZ6+PQ==
+  dependencies:
+    "@quickstat/core" "0.0.4"
+
 "@rtsao/scc@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@rtsao/scc/-/scc-1.1.0.tgz#927dd2fae9bc3361403ac2c7a00c32ddce9ad7e8"
@@ -789,12 +808,22 @@
   resolved "https://registry.yarnpkg.com/@sprucelabs/error/-/error-7.1.42.tgz#a95035d84b5f9b660b8cc0b43dc1414f487d1534"
   integrity sha512-tEBklby9qzuqotUDWI9oHefopLVKZDw5FSlrzXUDeb9fZvDPhCvingln/gajqomwqVLoxe3knlRheDPPGnHZhA==
 
+"@sprucelabs/error@^8.1.2":
+  version "8.1.2"
+  resolved "https://registry.yarnpkg.com/@sprucelabs/error/-/error-8.1.2.tgz#7db05d3f1548a5a59d45ebde9cd43e4e62e7c420"
+  integrity sha512-ybPufp9EiXRTskpqFTnBi67UnEi4iWhBJwfZq/bD/BdRGDE0ineKjvzWpxWbQGbhtyUly4WdT/cMzupGccAlzQ==
+
 "@sprucelabs/globby@^2.0.507", "@sprucelabs/globby@^2.0.515":
   version "2.0.515"
   resolved "https://registry.yarnpkg.com/@sprucelabs/globby/-/globby-2.0.515.tgz#6320e97d39460235619bd1e319f9fdcf45fb3cf2"
   integrity sha512-noOwcXmflkKkpDcRN/v8EVP0rdbl1Ka6NqbGR20I9LYSQdEUb3sPMC8ThR3WwSQcDv4j9ZvfOUt+9L7MVEajog==
   dependencies:
     globby "^11.0.4"
+
+"@sprucelabs/jest-json-reporter@^10.0.19":
+  version "10.0.19"
+  resolved "https://registry.yarnpkg.com/@sprucelabs/jest-json-reporter/-/jest-json-reporter-10.0.19.tgz#cd95d71b6a22eb51ed97ab37d1ede86a67e6b66f"
+  integrity sha512-PDrsxkQrjigrb/TaAMzcYtOyhEJB73fkrVeEGx6KK1AzVnY4UqjXf78+j9mRpvlqt+YDliH3WlJ1tbHIz8WazA==
 
 "@sprucelabs/jest-json-reporter@^9.0.71":
   version "9.0.75"
@@ -834,10 +863,37 @@
     ts-expect "^1.3.0"
     variable-diff "^2.0.2"
 
+"@sprucelabs/test-utils@^7.2.3":
+  version "7.2.3"
+  resolved "https://registry.yarnpkg.com/@sprucelabs/test-utils/-/test-utils-7.2.3.tgz#aa310894fb6ab841277a978cc8c1ca8044faf52e"
+  integrity sha512-W+Vxqf5nwLu9PxikZFGzgRqyPOiMZ2FAKPyfGzeJm2LoaSn8fjyy8p2ljSLZF1dwwfqz0o5okkIz+wA3WYLzRg==
+  dependencies:
+    "@sprucelabs/error" "^8.1.2"
+    deep-equal "^2.2.3"
+    jest-matcher-utils "^30.2.0"
+    just-clone "^6.2.0"
+    lodash "^4.17.21"
+    ts-expect "^1.3.0"
+    variable-diff "^2.0.2"
+
 "@sprucelabs/test@^10.0.25":
   version "10.0.28"
   resolved "https://registry.yarnpkg.com/@sprucelabs/test/-/test-10.0.28.tgz#b83572b3a0e37ffe7dd5a144a6a97396345cad74"
   integrity sha512-P4Rgkm1ENZNqR9vN3OuVCiTuJpCqJGc1yFnxOwiWU7MuYChR+cOiSiYnifi00xQwCg5Tf/wC8FK/IV7WMF1yHA==
+  dependencies:
+    chalk "^4.1.2"
+    deep-equal "^2.2.3"
+    jest "^30.2.0"
+    lodash "^4.17.21"
+    ts-expect "^1.3.0"
+    ts-jest next
+    typescript "^5.9.3"
+    variable-diff "^2.0.2"
+
+"@sprucelabs/test@^11.1.0":
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/@sprucelabs/test/-/test-11.1.0.tgz#b3d70fa73656166a229840d780ece904ed031683"
+  integrity sha512-zJVcfh9w8HJ2XwDuT6QKlh0V9woonk8wFvhYXpsCiTXtBv1cBVhvsHPYzuaiXrRmoMhR5htBWec+C/WDW6NH3Q==
   dependencies:
     chalk "^4.1.2"
     deep-equal "^2.2.3"
@@ -1501,9 +1557,9 @@ camelcase@^6.3.0:
   integrity sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==
 
 caniuse-lite@^1.0.30001759:
-  version "1.0.30001763"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001763.tgz#9397446dd110b1aeadb0df249c41b2ece7f90f09"
-  integrity sha512-mh/dGtq56uN98LlNX9qdbKnzINhX0QzhiWBFEkFfsFO4QyCvL8YegrJAazCwXIeqkIob8BlZPGM3xdnY+sgmvQ==
+  version "1.0.30001764"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001764.tgz#03206c56469f236103b90f9ae10bcb8b9e1f6005"
+  integrity sha512-9JGuzl2M+vPL+pz70gtMF9sHdMFbY9FJaQBi186cHKH3pSzDvzoUJUPV6fqiKIMyXbud9ZLg4F3Yza1vJ1+93g==
 
 chalk@^4.0.0, chalk@^4.1.0, chalk@^4.1.2:
   version "4.1.2"
@@ -2860,7 +2916,7 @@ jest-changed-files@30.2.0:
     jest-util "30.2.0"
     p-limit "^3.1.0"
 
-jest-circus@30.2.0:
+jest-circus@30.2.0, jest-circus@^30.2.0:
   version "30.2.0"
   resolved "https://registry.yarnpkg.com/jest-circus/-/jest-circus-30.2.0.tgz#98b8198b958748a2f322354311023d1d02e7603f"
   integrity sha512-Fh0096NC3ZkFx05EP2OXCxJAREVxj1BcW/i6EWqqymcgYKWjyyDpral3fMxVcHXg6oZM7iULer9wGRFvfpl+Tg==

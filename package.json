@@ -2,6 +2,7 @@
   "name": "@neurodevs/node-runtime-monitors",
   "version": "0.0.1",
   "description": "Monitors for Node.js runtime behavior",
+  "type": "module",
   "keywords": [
     "nodejs",
     "typescript",
@@ -38,20 +39,29 @@
     "rebuild": "yarn run clean.all && yarn install && yarn run build.dev",
     "update.dependencies": "yarn run clean.dependencies && yarn",
     "resolve-paths.lint": "yarn run build.resolve-paths ; yarn run lint",
-    "test": "jest",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "watch.build.dev": "tsc-watch --sourceMap --onCompilationComplete 'yarn run post.watch.build'",
     "watch.rebuild": "yarn run clean.all && yarn install && yarn run watch.build.dev",
     "watch.tsc": "tsc -w"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@quickstat/core": "^0.0.4",
+    "@quickstat/nodejs": "^0.0.4",
+    "@quickstat/prometheus": "^0.0.4"
+  },
   "devDependencies": {
     "@neurodevs/generate-id": "^1.1.2",
     "@neurodevs/node-tdd": "^0.2.5",
+    "@sprucelabs/jest-json-reporter": "^10.0.19",
     "@sprucelabs/resolve-path-aliases": "^4.0.13",
+    "@sprucelabs/test": "^11.1.0",
+    "@sprucelabs/test-utils": "^7.2.3",
     "@types/node": "^25.0.6",
     "chokidar-cli": "^3.0.0",
     "eslint": "^9.39.2",
     "eslint-config-spruce": "^11.2.26",
+    "jest": "^30.2.0",
+    "jest-circus": "^30.2.0",
     "prettier": "^3.7.4",
     "ts-node": "^10.9.2",
     "tsc-watch": "^7.2.0",
@@ -59,5 +69,25 @@
   },
   "skill": {
     "namespace": "node-runtime-monitors"
+  },
+  "jest": {
+    "testRunner": "jest-circus/runner",
+    "maxWorkers": 4,
+    "testTimeout": 120000,
+    "testEnvironment": "node",
+    "extensionsToTreatAsEsm": [".ts"],
+    "transform": {},
+    "testPathIgnorePatterns": [
+      "<rootDir>/tmp/",
+      "<rootDir>/src/",
+      "<rootDir>/node_modules/",
+      "<rootDir>/build/__tests__/testDirsAndFiles/"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.test.js?(x)"
+    ],
+    "moduleNameMapper": {
+      "^#spruce/(.*)$": "<rootDir>/build/.spruce/$1"
+    }
   }
 }
