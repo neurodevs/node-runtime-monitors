@@ -1,4 +1,4 @@
-import http from 'node:http'
+import http, { IncomingMessage, ServerResponse } from 'node:http'
 
 import { Client as QuickStatClient } from '@quickstat/core'
 import { NodeJsPlugin } from '@quickstat/nodejs'
@@ -18,7 +18,13 @@ export default class NodeRuntimeMonitor implements RuntimeMonitor {
     }
 
     public start() {
-        this.client = new this.Client({
+        this.client = this.QuickStatClient()
+
+        this.createHttpServer()
+    }
+
+    private QuickStatClient() {
+        return new this.Client({
             metrics: [],
             plugins: [
                 new NodeJsPlugin({
@@ -29,12 +35,29 @@ export default class NodeRuntimeMonitor implements RuntimeMonitor {
                 strategy: new ScrapeStrategy(),
             }),
         })
+    }
 
-        this.http.createServer(async (_req, _res) => {})
+    private createHttpServer() {
+        this.http.createServer(this.listener)
+    }
+
+    private get listener() {
+        return async (_req: IncomingMessage, res: ServerResponse) => {
+            const response = await this.getResponseFromClient()
+
+            if (response) {
+                res.writeHead(200, response.headers)
+                res.end(response.file)
+            }
+        }
+    }
+
+    private getResponseFromClient() {
+        return this.client.dataSource?.strategy?.getResponse()
     }
 
     private get Client() {
-        return NodeRuntimeMonitor.Client<PrometheusDataSource<ScrapeStrategy>>
+        return NodeRuntimeMonitor.Client
     }
 
     private get http() {
