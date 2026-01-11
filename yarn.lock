@@ -708,6 +708,13 @@
     "@emnapi/runtime" "^1.4.3"
     "@tybys/wasm-util" "^0.10.0"
 
+"@neurodevs/fake-node-core@^0.11.1":
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/@neurodevs/fake-node-core/-/fake-node-core-0.11.1.tgz#455a1821fee0b9f28545d721a5433206f25d4318"
+  integrity sha512-PgtEaTeKpFi+oFZrigha4XcSVFOJvM2bEszy37x9iLrsjchRBQauawDjfv6HoRmaPGgDzhI6/DVY8ItJh/ZiUw==
+  dependencies:
+    "@neurodevs/generate-id" "1.1.2"
+
 "@neurodevs/generate-id@1.1.2", "@neurodevs/generate-id@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@neurodevs/generate-id/-/generate-id-1.1.2.tgz#d9c725e8141ef247a40478da3c2d3c784815fad4"

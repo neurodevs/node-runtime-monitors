@@ -50,6 +50,7 @@
     "@quickstat/prometheus": "^0.0.4"
   },
   "devDependencies": {
+    "@neurodevs/fake-node-core": "^0.11.1",
     "@neurodevs/generate-id": "^1.1.2",
     "@neurodevs/node-tdd": "^0.2.5",
     "@sprucelabs/jest-json-reporter": "^10.0.19",
@@ -75,7 +76,9 @@
     "maxWorkers": 4,
     "testTimeout": 120000,
     "testEnvironment": "node",
-    "extensionsToTreatAsEsm": [".ts"],
+    "extensionsToTreatAsEsm": [
+      ".ts"
+    ],
     "transform": {},
     "testPathIgnorePatterns": [
       "<rootDir>/tmp/",
