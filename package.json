@@ -9,7 +9,11 @@
     "tdd",
     "runtime",
     "monitor",
-    "monitoring"
+    "monitoring",
+    "metrics",
+    "stats",
+    "quickstat",
+    "prometheus"
   ],
   "license": "MIT",
   "author": "Eric Yates <hello@ericthecurious.com>",
