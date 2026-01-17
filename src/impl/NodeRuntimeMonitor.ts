@@ -11,6 +11,8 @@ export default class NodeRuntimeMonitor implements RuntimeMonitor {
 
     protected client!: QuickStatClient<PrometheusDataSource<ScrapeStrategy>>
 
+    private readonly httpServerPort = 3242
+
     protected constructor() {}
 
     public static Create() {
@@ -38,7 +40,7 @@ export default class NodeRuntimeMonitor implements RuntimeMonitor {
     }
 
     private createHttpServer() {
-        this.http.createServer(this.handleRequest).listen(3242)
+        this.http.createServer(this.handleRequest).listen(this.httpServerPort)
     }
 
     protected handleRequest = async (

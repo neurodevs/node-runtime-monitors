@@ -1,6 +1,6 @@
 {
   "name": "@neurodevs/node-runtime-monitors",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Monitors for Node.js runtime behavior",
   "type": "module",
   "keywords": [
