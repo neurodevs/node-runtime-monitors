@@ -16,7 +16,7 @@
     "prometheus"
   ],
   "license": "MIT",
-  "author": "Eric Yates <hello@ericthecurious.com>",
+  "author": "Eric Yates <hello@ericyates.me>",
   "homepage": "https://github.com/neurodevs/node-runtime-monitors",
   "repository": {
     "type": "git",
